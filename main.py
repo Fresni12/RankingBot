@@ -196,7 +196,7 @@ def build_embed_from_snapshot(snap: Dict[str, Optional[Dict[str, Any]]], queue_l
 # -----------------------------
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
-RIOT_API_KEY = (os.getenv("RIOT_API_KEY") or "").strip().strip('"').strip("'")
+RIOT_API_KEY = os.getenv("RIOT_API_KEY")
 ANNOUNCE_CHANNEL_ID = int(os.getenv("ANNOUNCE_CHANNEL_ID", "0"))
 
 print("RIOT key preview:", (RIOT_API_KEY[:10] if RIOT_API_KEY else ""), "len=", len(RIOT_API_KEY))
@@ -383,3 +383,4 @@ if __name__ == "__main__":
     except Exception:
         pass
     bot.run(TOKEN)
+
